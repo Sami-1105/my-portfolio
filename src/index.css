@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #030712;
+  color: white;
+  font-family: Inter, sans-serif;
+  overflow-x: hidden;
+}
+
+
+/* CUSTOM CURSOR */
+
+* {
+  cursor: none;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: #22d3ee;
+  border-radius: 9999px;
+  position: fixed;
+  z-index: 99999;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px #22d3ee;
+}
+
+.cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(34, 211, 238, 0.5);
+  border-radius: 9999px;
+  position: fixed;
+  z-index: 99998;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: all 0.08s ease-out;
+  backdrop-filter: blur(4px);
+}
+
+.cursor-hover:hover ~ .cursor-outline {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+
+/* FLOATING IMAGE */
+
+.floaty {
+  animation: floaty 5s ease-in-out infinite;
+}
+
+@keyframes floaty {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+
+/* IMAGE GLOW */
+
+.glow {
+  box-shadow:
+    0 0 20px rgba(34, 211, 238, 0.4),
+    0 0 60px rgba(34, 211, 238, 0.2);
+}
